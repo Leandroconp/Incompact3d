@@ -10,10 +10,10 @@ GIT_VERSION := $(shell git describe --tag --long --always)
 
 #######Select Flow Type#######
 # FLOW_TYPE = Lock-exchange
- FLOW_TYPE = TGV
+# FLOW_TYPE = TGV
 #  FLOW_TYPE = Channel-flow
 # FLOW_TYPE = Periodic-hill
-# FLOW_TYPE = Cylinder
+ FLOW_TYPE = Cylinder
 # FLOW_TYPE = dbg-schemes
 
 DEFS = -DDOUBLE_PREC -DVERSION=\"$(GIT_VERSION)\"
