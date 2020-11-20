@@ -91,16 +91,16 @@ program visu_paraview
   write(nfil,*)'            </DataItem>'
   write(nfil,*)'        </Time>'
 
-  do ifile = file1, filen
+  do ifile = file1, filen, icheckpoint
 
 !IF THE DATA ARE STORED WITH 5 DIGITS, IE UX00001,UX00002,ETC.
-     dig1 =   ifile*icheckpoint/10000000 + 48
-     dig2 = ( ifile*icheckpoint - 1000000*( ifile*icheckpoint/1000000 ) )/100000 + 48
-     dig3 = ( ifile*icheckpoint - 100000*( ifile*icheckpoint/100000 ) )/10000 + 48
-     dig4 = ( ifile*icheckpoint - 10000*( ifile*icheckpoint/10000 ) )/1000 + 48
-     dig5 = ( ifile*icheckpoint - 1000*( ifile*icheckpoint/1000 ) )/100 + 48
-     dig6 = ( ifile*icheckpoint - 100*( ifile*icheckpoint/100 ) )/10 + 48
-     dig7 = ( ifile*icheckpoint - 10*( ifile*icheckpoint/10 ) )/1 + 48
+     dig1 =   ifile/1000000 + 48
+     dig2 = ( ifile - 1000000*( ifile/1000000 ) )/100000 + 48
+     dig3 = ( ifile - 100000*( ifile/100000 ) )/10000 + 48
+     dig4 = ( ifile - 10000*( ifile/10000 ) )/1000 + 48
+     dig5 = ( ifile - 1000*( ifile/1000 ) )/100 + 48
+     dig6 = ( ifile - 100*( ifile/100 ) )/10 + 48
+     dig7 = ( ifile - 10*( ifile/10 ) )/1 + 48
      chits(1:7) = char(dig1)//char(dig2)//char(dig3)//char(dig4)//char(dig5)//char(dig6)//char(dig7)
 
 !IF THE DATA ARE STORED WITH 5 DIGITS, IE UX00001,UX00002,ETC.
