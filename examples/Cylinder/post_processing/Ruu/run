@@ -1,1 +1,0 @@
-gfortran -O3 Ruu_time.f90 median.f90 -o out
